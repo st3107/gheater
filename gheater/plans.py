@@ -1,22 +1,21 @@
 import pathlib
-import time
 import uuid
-import numpy as np
-import bluesky.plans as bp
+
 import bluesky.plan_stubs as bps
+import bluesky.plans as bp
 import bluesky.preprocessors as bpp
+import numpy as np
 import pyFAI
-from tifffile import TiffWriter
 from bluesky.callbacks import LiveTable
 from databroker.v0 import Broker
-
+from tifffile import TiffWriter
 from xpdacq.beamtime import (
-    close_shutter_stub,
     open_shutter_stub,
+    close_shutter_stub,
     _check_mini_expo
 )
-from xpdacq.xpdacq_conf import xpd_configuration
 from xpdacq.glbl import glbl
+from xpdacq.xpdacq_conf import xpd_configuration
 
 
 def configure_area_det_expo(exposure):
@@ -129,14 +128,17 @@ def gradient_heating_plan(dets, expo_time, calib_map,
                 raise RuntimeError(e)
             plan = bp.count(_dets, num=1, md=_md)
             plan = bpp.subs_wrapper(plan, LiveTable(_dets))
+            yield from open_shutter_stub()
             yield from plan
+            yield from close_shutter_stub()
         yield from bps.mv(x_motor, x_pos_0,
                           y_motor, y_pos_0)  # move back to origin
         yield from bps.checkpoint()
     print("END of gradient heating scan")
 
 
-def multi_calib_scan(detectors: list, *args, num: int, exposure: float = None, calib_map: list = None, md: dict = None):
+def multi_calib_scan(detectors: list, *args, num: int, exposure: float = None, calib_map: list = None,
+                     md: dict = None):
     """Run the line scan using one calibration at one point.
 
     Parameters
@@ -180,6 +182,7 @@ def multi_calib_scan(detectors: list, *args, num: int, exposure: float = None, c
         raise ValueError("Number of points must be positive.")
     starts, ends = args[1::3], args[2::3]
     lines = [np.linspace(start, end, num).tolist() for start, end in zip(starts, ends)]
+
     # start run
 
     def get_positions(j):
@@ -203,7 +206,8 @@ def multi_calib_scan(detectors: list, *args, num: int, exposure: float = None, c
     yield from bps.checkpoint()
 
 
-def gen_beautiful_plan(detectors: list, *args, num: int, calib_map: list = None, exposure: float = None, num_loop: int = 1, heater, final_temp: float, sleep_time: float = 0., md: dict = None):
+def gen_beautiful_plan(detectors: list, *args, num: int, calib_map: list = None, exposure: float = None,
+                       num_loop: int = 1, heater, final_temp: float, sleep_time: float = 0., md: dict = None):
     """Generate the plan for the whole measurement.
 
     Run the line scan for x times.
