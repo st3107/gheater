@@ -34,7 +34,7 @@ with open(path.join(here, 'requirements.txt')) as requirements_file:
 
 setup(
     name='gheater',
-    version='0.1.0',
+    version=versioneer.get_version(),
     description="The scripts for gradient heater.",
     long_description=readme,
     author="Songsheng Tao",
