@@ -137,8 +137,8 @@ def gradient_heating_plan(dets, expo_time, calib_map,
     print("END of gradient heating scan")
 
 
-def multi_calib_scan(detectors: list, *args, num: int, exposure: float = None, calib_map: list = None,
-                     md: dict = None):
+def multi_calib_scan(detectors: list, *args, num: int, exposure: float = None, wait_per_step: float = 0.,
+                     calib_map: list = None, md: dict = None):
     """Run the line scan using one calibration at one point.
 
     Parameters
@@ -151,6 +151,8 @@ def multi_calib_scan(detectors: list, *args, num: int, exposure: float = None, c
         The number of points to collect on the line.
     exposure :
         The exposure time at each point in seconds.
+    wait_per_step :
+        The time to wait before open the shutter at each step in seconds.
     calib_map :
         The list of calibration data. It should be in the same order of the exposure and the number should be equal to the number of points.
     md :
@@ -201,13 +203,17 @@ def multi_calib_scan(detectors: list, *args, num: int, exposure: float = None, c
             md["calibration_md"] = calib_md
         plan = bp.count(all_detectors, md=md)
         plan = bpp.subs_wrapper(plan, LiveTable(all_detectors))
+        yield from bps.sleep(wait_per_step)
+        yield from open_shutter_stub()
         yield from plan
+        yield from close_shutter_stub()
     yield from bps.mv(*get_positions(0))
     yield from bps.checkpoint()
 
 
 def gen_beautiful_plan(detectors: list, *args, num: int, calib_map: list = None, exposure: float = None,
-                       num_loop: int = 1, heater, final_temp: float, sleep_time: float = 0., md: dict = None):
+                       wait_per_step: float = 0., num_loop: int = 1, heater, final_temp: float,
+                       sleep_time: float = 0., md: dict = None):
     """Generate the plan for the whole measurement.
 
     Run the line scan for x times.
@@ -225,6 +231,8 @@ def gen_beautiful_plan(detectors: list, *args, num: int, calib_map: list = None,
         The number of points to collect on the line.
     exposure :
         The exposure time at each point in seconds.
+    wait_per_step :
+        The time to wait before open the shutter at each step in seconds.
     calib_map :
         The list of calibration data. It should be in the same order of the exposure and the number should be equal to the number of points.
     num_loop :
@@ -234,7 +242,7 @@ def gen_beautiful_plan(detectors: list, *args, num: int, calib_map: list = None,
     final_temp :
         The temperature for the final scan.
     sleep_time :
-        The time to wait before the finla scan.
+        The time to wait before the final scan.
     md :
         The metadata of the plan.
     """

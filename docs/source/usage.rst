@@ -1,3 +1,59 @@
+.. code:: ipython3
+
+    %run -i 999-load.py
+
+
+.. parsed-literal::
+
+    /Users/sst/anaconda3/envs/test_xpdstack/lib/python3.8/site-packages/databroker/v1.py:1602: UserWarning: Failed to load config. Falling back to v0.Exception was: Unable to handle metadatastore.module 'databroker.headersource.sqlite'
+      warnings.warn(
+
+
+.. parsed-literal::
+
+    No config file could be found in the following locations:
+    /Users/sst/.config/acq
+    /Users/sst/anaconda3/envs/test_xpdstack/etc/acq
+    /etc/acq
+    Loading from packaged simulation configuration
+    INFO: Initializing the XPD data acquisition environment ...
+    INFO: area detector has been configured to new acquisition time (time per frame)  = 0.1s
+    INFO: Reload beamtime objects:
+    
+    ScanPlans:
+    0: ct_5
+    1: ct_0.1
+    2: ct_1
+    3: ct_10
+    4: ct_30
+    5: ct_60
+    
+    Samples:
+    0: poop
+    1: SrTiO3
+    
+    {'Verification time': '2021-05-20 13:54:39', 'Verified by': 'st'}
+
+
+.. parsed-literal::
+
+    
+    Is this configuration correct? y/n:  y
+    Please input your initials:  st
+
+
+.. parsed-literal::
+
+    INFO: beamtime object has been linked
+    
+    INFO: beamtime object has been linked
+    
+    INFO: Initialized glbl, bt, xrun.
+    INFO: Publish data to localhost port 5567 with prefix 'raw'.
+    INFO: Changed home to /Users/sst/acqsim/xpdUser
+    OK, ready to go.  To continue, follow the steps in the xpdAcqdocumentation at http://xpdacq.github.io/xpdacq
+
+
 How to use the scripts during the beamtime?
 ===========================================
 
@@ -31,20 +87,25 @@ compose the plan using ``multi_calib_scan``. In this plan, the
 diffraction image on the detector ``pe1c`` will be collected in a line.
 The ``ns.motor1`` will move from ``0`` to ``5`` and the ``ns.motor2``
 will move from ``0`` to ``0.5``. In total, ``6`` evenly spaced points
-(including the start and the end) will be collected and the exposure
-time at each point is ``5`` second. The metadata we would like to record
-is ``{"task": "calibration"}`` (optional).
+(including the start and the end) will be collected. Before the
+collection, wait for ``2`` seconds for the detector to “cool” down and
+then open the shutter to collect the image. The exposure time at each
+point is ``5`` second. The metadata we would like to record is
+``{"task": "calibration"}`` (optional).
 
 .. code:: ipython3
 
-    plan = multi_calib_scan([pe1c], ns.motor1, 0, 5, ns.motor2, 0, 0.5, num=6, exposure=5, md={"task": "calibration"})
+    from bluesky.simulators import summarize_plan
+    
+    
+    plan = multi_calib_scan([pe1c], ns.motor1, 0, 5, ns.motor2, 0, 0.5, num=6, wait_per_step=2., exposure=5., md={"task": "calibration"})
     xrun({}, plan)
 
 
 .. parsed-literal::
 
     No calib_map. This is a calibration run.
-    INFO: requested exposure time = 5 - > computed exposure time= 5.0
+    INFO: requested exposure time = 5.0 - > computed exposure time= 5.0
     INFO: closing shutter...
     INFO: taking dark frame....
     INFO: No calibration file found in config_base.
@@ -64,16 +125,16 @@ is ``{"task": "calibration"}`` (optional).
 
 .. parsed-literal::
 
-
-
+    
+    
     +-----------+------------+
     |   seq_num |       time |
     +-----------+------------+
-    |         1 | 16:25:33.8 |
+    |         1 | 13:52:15.7 |
     +-----------+------------+
-    generator count ['76be1c55'] (scan num: 1)
-
-
+    generator count ['45fb097d'] (scan num: 1)
+    
+    
     dark frame complete, update dark dict
     opening shutter...
     INFO: No calibration file found in config_base.
@@ -83,16 +144,16 @@ is ``{"task": "calibration"}`` (optional).
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:25:34.6 |      0.000 |           0.000 |      0.000 |           0.000 |
+    |         1 | 13:52:16.8 |      0.000 |           0.000 |      0.000 |           0.000 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['aac0a589'] (scan num: 2)
-
-
+    generator count ['983c1be4'] (scan num: 2)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -100,16 +161,16 @@ is ``{"task": "calibration"}`` (optional).
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:25:35.4 |      1.000 |           1.000 |      0.100 |           0.100 |
+    |         1 | 13:52:19.9 |      1.000 |           1.000 |      0.100 |           0.100 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['da7b2dcd'] (scan num: 3)
-
-
+    generator count ['c282db3a'] (scan num: 3)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -117,16 +178,16 @@ is ``{"task": "calibration"}`` (optional).
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:25:36.2 |      2.000 |           2.000 |      0.200 |           0.200 |
+    |         1 | 13:52:23.2 |      2.000 |           2.000 |      0.200 |           0.200 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['5e4ac917'] (scan num: 4)
-
-
+    generator count ['57150d0a'] (scan num: 4)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -134,16 +195,16 @@ is ``{"task": "calibration"}`` (optional).
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:25:36.9 |      3.000 |           3.000 |      0.300 |           0.300 |
+    |         1 | 13:52:26.4 |      3.000 |           3.000 |      0.300 |           0.300 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['14fb7c85'] (scan num: 5)
-
-
+    generator count ['f818a935'] (scan num: 5)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -151,16 +212,16 @@ is ``{"task": "calibration"}`` (optional).
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:25:37.6 |      4.000 |           4.000 |      0.400 |           0.400 |
+    |         1 | 13:52:29.5 |      4.000 |           4.000 |      0.400 |           0.400 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['fda5f4d8'] (scan num: 6)
-
-
+    generator count ['12564b24'] (scan num: 6)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -168,29 +229,29 @@ is ``{"task": "calibration"}`` (optional).
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:25:38.4 |      5.000 |           5.000 |      0.500 |           0.500 |
+    |         1 | 13:52:32.7 |      5.000 |           5.000 |      0.500 |           0.500 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['b215aed6'] (scan num: 7)
-
-
+    generator count ['efa6cd06'] (scan num: 7)
+    
+    
 
 
 
 
 .. parsed-literal::
 
-    ('76be1c55-5747-4937-8787-4389ec1458a8',
-     'aac0a589-6bc4-48db-a5c2-1c89f509a5bb',
-     'da7b2dcd-bb00-4936-8c80-3496587483e6',
-     '5e4ac917-8e74-4c7f-b515-752a6cb66d70',
-     '14fb7c85-310c-4e78-9ec2-517a9f2ed06a',
-     'fda5f4d8-38b8-41e5-943a-dafeaf920090',
-     'b215aed6-3aed-49d8-9bd0-40143bd3a9ac')
+    ('45fb097d-f659-44cf-99da-fa75c498770b',
+     '983c1be4-2f37-4c65-ad85-58ec8ce66cdf',
+     'c282db3a-e722-46ca-b942-9ae7c9990017',
+     '57150d0a-b856-42e9-86ff-07a880f06be5',
+     'f818a935-3679-4087-a41d-fabf6ee340e4',
+     '12564b24-b178-49db-a8bf-38d142108c5c',
+     'efa6cd06-1150-4185-883b-e2179aa845bb')
 
 
 
@@ -224,10 +285,9 @@ from the scan.
     ├── calib_2.poni
     ├── calib_3.poni
     ├── calib_4.poni
-    ├── calib_5.poni
-    └── calib_6.poni
-
-    0 directories, 7 files
+    └── calib_5.poni
+    
+    0 directories, 6 files
 
 
 Now, we can load the calibration results from files to the namespace
@@ -258,9 +318,11 @@ In this example, we start measurement by running a line scan. The
 diffraction image on the detector ``pe1c`` will be collected in a line.
 The ``ns.motor1`` will move from ``0`` to ``5`` and the ``ns.motor2``
 will move from ``0`` to ``0.5``. In total, ``6`` evenly spaced points
-(including the start and the end) will be collected and the exposure
-time at each point is ``5`` second. The metadata we would like to record
-is ``{"task": "day time scan"}`` (optional). At each point ``i``, the
+(including the start and the end) will be collected. Before the
+collection, wait for ``2`` seconds for the detector to “cool” down and
+then open the shutter to collect the image. The exposure time at each
+point is ``5`` second. The metadata we would like to record is
+``{"task": "day time scan"}`` (optional). At each point ``i``, the
 calibration data from ``calib_map[i]`` will be used for the data
 processing.
 
@@ -285,16 +347,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:24.6 |      0.000 |           0.000 |      0.000 |           0.000 |
+    |         1 | 13:52:44.6 |      0.000 |           0.000 |      0.000 |           0.000 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['d3c31d01'] (scan num: 27)
-
-
+    generator count ['51c1c1bb'] (scan num: 8)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -302,16 +364,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:25.4 |      1.000 |           1.000 |      0.100 |           0.100 |
+    |         1 | 13:52:45.8 |      1.000 |           1.000 |      0.100 |           0.100 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['fccd113a'] (scan num: 28)
-
-
+    generator count ['aa2a209c'] (scan num: 9)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -319,16 +381,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:26.1 |      2.000 |           2.000 |      0.200 |           0.200 |
+    |         1 | 13:52:46.9 |      2.000 |           2.000 |      0.200 |           0.200 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['f7ad28cb'] (scan num: 29)
-
-
+    generator count ['b7f64dc5'] (scan num: 10)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -336,16 +398,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:26.9 |      3.000 |           3.000 |      0.300 |           0.300 |
+    |         1 | 13:52:48.1 |      3.000 |           3.000 |      0.300 |           0.300 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['d793caea'] (scan num: 30)
-
-
+    generator count ['33f68b9f'] (scan num: 11)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -353,16 +415,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:27.7 |      4.000 |           4.000 |      0.400 |           0.400 |
+    |         1 | 13:52:49.5 |      4.000 |           4.000 |      0.400 |           0.400 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['5df9fa0f'] (scan num: 31)
-
-
+    generator count ['cf90d1ec'] (scan num: 12)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -370,16 +432,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:28.5 |      5.000 |           5.000 |      0.500 |           0.500 |
+    |         1 | 13:52:50.6 |      5.000 |           5.000 |      0.500 |           0.500 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['e973d11b'] (scan num: 32)
-
-
+    generator count ['d7be71e4'] (scan num: 13)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -387,16 +449,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:29.2 |      0.000 |           0.000 |      0.000 |           0.000 |
+    |         1 | 13:52:51.7 |      0.000 |           0.000 |      0.000 |           0.000 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['462ff175'] (scan num: 33)
-
-
+    generator count ['f9be9ece'] (scan num: 14)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -404,16 +466,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:30.0 |      1.000 |           1.000 |      0.100 |           0.100 |
+    |         1 | 13:52:52.7 |      1.000 |           1.000 |      0.100 |           0.100 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['3d117a51'] (scan num: 34)
-
-
+    generator count ['8e291a80'] (scan num: 15)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -421,16 +483,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:30.8 |      2.000 |           2.000 |      0.200 |           0.200 |
+    |         1 | 13:52:53.9 |      2.000 |           2.000 |      0.200 |           0.200 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['8cfc1bd4'] (scan num: 35)
-
-
+    generator count ['39c42625'] (scan num: 16)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -438,16 +500,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:31.6 |      3.000 |           3.000 |      0.300 |           0.300 |
+    |         1 | 13:52:55.0 |      3.000 |           3.000 |      0.300 |           0.300 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['3ba5cfe0'] (scan num: 36)
-
-
+    generator count ['52c9537e'] (scan num: 17)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -455,16 +517,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:32.3 |      4.000 |           4.000 |      0.400 |           0.400 |
+    |         1 | 13:52:56.2 |      4.000 |           4.000 |      0.400 |           0.400 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['9895f1fd'] (scan num: 37)
-
-
+    generator count ['e5da38bb'] (scan num: 18)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -472,16 +534,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:33.1 |      5.000 |           5.000 |      0.500 |           0.500 |
+    |         1 | 13:52:57.4 |      5.000 |           5.000 |      0.500 |           0.500 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['03eebeea'] (scan num: 38)
-
-
+    generator count ['7d3a6e6a'] (scan num: 19)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -489,16 +551,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:33.9 |      0.000 |           0.000 |      0.000 |           0.000 |
+    |         1 | 13:53:03.8 |      0.000 |           0.000 |      0.000 |           0.000 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['b76a9a95'] (scan num: 39)
-
-
+    generator count ['33e09bf5'] (scan num: 20)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -506,16 +568,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:34.7 |      1.000 |           1.000 |      0.100 |           0.100 |
+    |         1 | 13:53:05.4 |      1.000 |           1.000 |      0.100 |           0.100 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['bf648a83'] (scan num: 40)
-
-
+    generator count ['459c4976'] (scan num: 21)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -523,16 +585,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:35.5 |      2.000 |           2.000 |      0.200 |           0.200 |
+    |         1 | 13:53:07.4 |      2.000 |           2.000 |      0.200 |           0.200 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['992e33a5'] (scan num: 41)
-
-
+    generator count ['a6575ab3'] (scan num: 22)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -540,16 +602,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:36.3 |      3.000 |           3.000 |      0.300 |           0.300 |
+    |         1 | 13:53:08.8 |      3.000 |           3.000 |      0.300 |           0.300 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['98fdc7d1'] (scan num: 42)
-
-
+    generator count ['da1207ff'] (scan num: 23)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -557,16 +619,16 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:37.0 |      4.000 |           4.000 |      0.400 |           0.400 |
+    |         1 | 13:53:10.0 |      4.000 |           4.000 |      0.400 |           0.400 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['4f066e6d'] (scan num: 43)
-
-
+    generator count ['8ecefcd3'] (scan num: 24)
+    
+    
     INFO: No calibration file found in config_base.
     Scan will still keep going on....
     INFO: Current filter status
@@ -574,40 +636,40 @@ line scan just like that in the beginning.
     INFO: flt2 : Out
     INFO: flt3 : Out
     INFO: flt4 : Out
-
-
+    
+    
     +-----------+------------+------------+-----------------+------------+-----------------+
     |   seq_num |       time |     motor1 | motor1_setpoint |     motor2 | motor2_setpoint |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    |         1 | 16:06:37.8 |      5.000 |           5.000 |      0.500 |           0.500 |
+    |         1 | 13:53:11.1 |      5.000 |           5.000 |      0.500 |           0.500 |
     +-----------+------------+------------+-----------------+------------+-----------------+
-    generator count ['3df41ca3'] (scan num: 44)
-
-
+    generator count ['0b7ef4f3'] (scan num: 25)
+    
+    
 
 
 
 
 .. parsed-literal::
 
-    ('d3c31d01-d844-4b38-b28d-37873770f924',
-     'fccd113a-0500-42ca-82c6-67d355d763e4',
-     'f7ad28cb-0384-4924-be6c-779974fbb54b',
-     'd793caea-efdd-45c1-a9af-f42b663cb936',
-     '5df9fa0f-a466-4846-982a-f6c6d3d7a127',
-     'e973d11b-1951-4f1e-9e4d-a17b9d67ca1d',
-     '462ff175-884d-43b4-82be-b7159e976636',
-     '3d117a51-9b9b-46c8-9efb-38b833c378ac',
-     '8cfc1bd4-f98b-45d3-af0d-755900c3bbe1',
-     '3ba5cfe0-0388-4d55-a242-3d9c1f0e017f',
-     '9895f1fd-7560-479f-b9c9-ef0e38fcc8ad',
-     '03eebeea-e84a-48a8-8baa-1e59f6b865d5',
-     'b76a9a95-e36b-4067-b1aa-120f1b364c04',
-     'bf648a83-b636-4df9-a3c3-68145cb8de2b',
-     '992e33a5-27ae-4ed1-bff1-a53c7345403b',
-     '98fdc7d1-610a-47d6-9866-ef5c30a52c1c',
-     '4f066e6d-8bef-436a-a49d-11d026dfd662',
-     '3df41ca3-3ad0-4067-bf2e-530da87bf530')
+    ('51c1c1bb-7207-4b60-96a5-0112c1a39757',
+     'aa2a209c-e459-4b44-b6e1-1472c83419eb',
+     'b7f64dc5-1bd1-4e5c-a5cd-661ae3009bc2',
+     '33f68b9f-09f3-4b80-a7bb-2cf08198eb95',
+     'cf90d1ec-4c23-4f22-b6e9-019cb3c0de15',
+     'd7be71e4-f954-472e-ad53-104dc34d3e5c',
+     'f9be9ece-85a7-48c1-a1e8-4275c1bc46aa',
+     '8e291a80-f987-44d5-9ffd-4c694daa37ea',
+     '39c42625-e7bb-4e86-865e-2f1165705ef1',
+     '52c9537e-ed8d-445a-bf97-237209f77885',
+     'e5da38bb-190a-4ab5-8804-ebc0e5bbd50e',
+     '7d3a6e6a-20f2-4bd5-9fc1-0f869253d054',
+     '33e09bf5-fde9-4191-a6b9-dc4ea5344495',
+     '459c4976-b5f6-48ce-b2a1-c0d4d2802d78',
+     'a6575ab3-43f0-4773-9896-bbde2caed104',
+     'da1207ff-174c-49d2-a116-ca8af75728dd',
+     '8ecefcd3-4004-4543-9381-572dd3d4ad26',
+     '0b7ef4f3-ee74-499d-a557-0a2a6af9d542')
 
 
 
