@@ -177,7 +177,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="how-to-use-the-scripts-during-the-beamtime">
+  <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> -i 999-load.py
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">sst</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">test_xpdstack</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">databroker</span><span class="o">/</span><span class="n">v1</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1602</span><span class="p">:</span> <span class="ne">UserWarning</span><span class="p">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">load</span> <span class="n">config</span><span class="o">.</span> <span class="n">Falling</span> <span class="n">back</span> <span class="n">to</span> <span class="n">v0</span><span class="o">.</span><span class="n">Exception</span> <span class="n">was</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">metadatastore</span><span class="o">.</span><span class="n">module</span> <span class="s1">&#39;databroker.headersource.sqlite&#39;</span>
+  <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">config</span> <span class="n">file</span> <span class="n">could</span> <span class="n">be</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">following</span> <span class="n">locations</span><span class="p">:</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">sst</span><span class="o">/.</span><span class="n">config</span><span class="o">/</span><span class="n">acq</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">sst</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">test_xpdstack</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">acq</span>
+<span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">acq</span>
+<span class="n">Loading</span> <span class="kn">from</span> <span class="nn">packaged</span> <span class="n">simulation</span> <span class="n">configuration</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">Initializing</span> <span class="n">the</span> <span class="n">XPD</span> <span class="n">data</span> <span class="n">acquisition</span> <span class="n">environment</span> <span class="o">...</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">area</span> <span class="n">detector</span> <span class="n">has</span> <span class="n">been</span> <span class="n">configured</span> <span class="n">to</span> <span class="n">new</span> <span class="n">acquisition</span> <span class="n">time</span> <span class="p">(</span><span class="n">time</span> <span class="n">per</span> <span class="n">frame</span><span class="p">)</span>  <span class="o">=</span> <span class="mf">0.1</span><span class="n">s</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">Reload</span> <span class="n">beamtime</span> <span class="n">objects</span><span class="p">:</span>
+
+<span class="n">ScanPlans</span><span class="p">:</span>
+<span class="mi">0</span><span class="p">:</span> <span class="n">ct_5</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">ct_0</span><span class="mf">.1</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">ct_1</span>
+<span class="mi">3</span><span class="p">:</span> <span class="n">ct_10</span>
+<span class="mi">4</span><span class="p">:</span> <span class="n">ct_30</span>
+<span class="mi">5</span><span class="p">:</span> <span class="n">ct_60</span>
+
+<span class="n">Samples</span><span class="p">:</span>
+<span class="mi">0</span><span class="p">:</span> <span class="n">poop</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">SrTiO3</span>
+
+<span class="p">{</span><span class="s1">&#39;Verification time&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-05-20 13:54:39&#39;</span><span class="p">,</span> <span class="s1">&#39;Verified by&#39;</span><span class="p">:</span> <span class="s1">&#39;st&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Is this configuration correct? y/n:  y
+Please input your initials:  st
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span> <span class="n">beamtime</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">been</span> <span class="n">linked</span>
+
+<span class="n">INFO</span><span class="p">:</span> <span class="n">beamtime</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">been</span> <span class="n">linked</span>
+
+<span class="n">INFO</span><span class="p">:</span> <span class="n">Initialized</span> <span class="n">glbl</span><span class="p">,</span> <span class="n">bt</span><span class="p">,</span> <span class="n">xrun</span><span class="o">.</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">Publish</span> <span class="n">data</span> <span class="n">to</span> <span class="n">localhost</span> <span class="n">port</span> <span class="mi">5567</span> <span class="k">with</span> <span class="n">prefix</span> <span class="s1">&#39;raw&#39;</span><span class="o">.</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">Changed</span> <span class="n">home</span> <span class="n">to</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">sst</span><span class="o">/</span><span class="n">acqsim</span><span class="o">/</span><span class="n">xpdUser</span>
+<span class="n">OK</span><span class="p">,</span> <span class="n">ready</span> <span class="n">to</span> <span class="n">go</span><span class="o">.</span>  <span class="n">To</span> <span class="k">continue</span><span class="p">,</span> <span class="n">follow</span> <span class="n">the</span> <span class="n">steps</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">xpdAcqdocumentation</span> <span class="n">at</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">xpdacq</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">xpdacq</span>
+</pre></div>
+</div>
+<div class="section" id="how-to-use-the-scripts-during-the-beamtime">
 <h1>How to use the scripts during the beamtime?<a class="headerlink" href="#how-to-use-the-scripts-during-the-beamtime" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
@@ -204,15 +249,20 @@ compose the plan using <code class="docutils literal notranslate"><span class="p
 diffraction image on the detector <code class="docutils literal notranslate"><span class="pre">pe1c</span></code> will be collected in a line.
 The <code class="docutils literal notranslate"><span class="pre">ns.motor1</span></code> will move from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">5</span></code> and the <code class="docutils literal notranslate"><span class="pre">ns.motor2</span></code>
 will move from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>. In total, <code class="docutils literal notranslate"><span class="pre">6</span></code> evenly spaced points
-(including the start and the end) will be collected and the exposure
-time at each point is <code class="docutils literal notranslate"><span class="pre">5</span></code> second. The metadata we would like to record
-is <code class="docutils literal notranslate"><span class="pre">{&quot;task&quot;:</span> <span class="pre">&quot;calibration&quot;}</span></code> (optional).</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plan</span> <span class="o">=</span> <span class="n">multi_calib_scan</span><span class="p">([</span><span class="n">pe1c</span><span class="p">],</span> <span class="n">ns</span><span class="o">.</span><span class="n">motor1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">ns</span><span class="o">.</span><span class="n">motor2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">exposure</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">md</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="s2">&quot;calibration&quot;</span><span class="p">})</span>
+(including the start and the end) will be collected. Before the
+collection, wait for <code class="docutils literal notranslate"><span class="pre">2</span></code> seconds for the detector to “cool” down and
+then open the shutter to collect the image. The exposure time at each
+point is <code class="docutils literal notranslate"><span class="pre">5</span></code> second. The metadata we would like to record is
+<code class="docutils literal notranslate"><span class="pre">{&quot;task&quot;:</span> <span class="pre">&quot;calibration&quot;}</span></code> (optional).</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bluesky.simulators</span> <span class="kn">import</span> <span class="n">summarize_plan</span>
+
+
+<span class="n">plan</span> <span class="o">=</span> <span class="n">multi_calib_scan</span><span class="p">([</span><span class="n">pe1c</span><span class="p">],</span> <span class="n">ns</span><span class="o">.</span><span class="n">motor1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">ns</span><span class="o">.</span><span class="n">motor2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">wait_per_step</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span> <span class="n">exposure</span><span class="o">=</span><span class="mf">5.</span><span class="p">,</span> <span class="n">md</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="s2">&quot;calibration&quot;</span><span class="p">})</span>
 <span class="n">xrun</span><span class="p">({},</span> <span class="n">plan</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">calib_map</span><span class="o">.</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">calibration</span> <span class="n">run</span><span class="o">.</span>
-<span class="n">INFO</span><span class="p">:</span> <span class="n">requested</span> <span class="n">exposure</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">-</span> <span class="o">&gt;</span> <span class="n">computed</span> <span class="n">exposure</span> <span class="n">time</span><span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">requested</span> <span class="n">exposure</span> <span class="n">time</span> <span class="o">=</span> <span class="mf">5.0</span> <span class="o">-</span> <span class="o">&gt;</span> <span class="n">computed</span> <span class="n">exposure</span> <span class="n">time</span><span class="o">=</span> <span class="mf">5.0</span>
 <span class="n">INFO</span><span class="p">:</span> <span class="n">closing</span> <span class="n">shutter</span><span class="o">...</span>
 <span class="n">INFO</span><span class="p">:</span> <span class="n">taking</span> <span class="n">dark</span> <span class="n">frame</span><span class="o">....</span>
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -231,9 +281,9 @@ is <code class="docutils literal notranslate"><span class="pre">{&quot;task&quot
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+-----------+------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>
 <span class="o">+-----------+------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mf">33.8</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">15.7</span> <span class="o">|</span>
 <span class="o">+-----------+------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;76be1c55&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;45fb097d&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
 
 
 <span class="n">dark</span> <span class="n">frame</span> <span class="n">complete</span><span class="p">,</span> <span class="n">update</span> <span class="n">dark</span> <span class="nb">dict</span>
@@ -250,9 +300,9 @@ is <code class="docutils literal notranslate"><span class="pre">{&quot;task&quot
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mf">34.6</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">16.8</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;aac0a589&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;983c1be4&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -267,9 +317,9 @@ is <code class="docutils literal notranslate"><span class="pre">{&quot;task&quot
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mf">35.4</span> <span class="o">|</span>      <span class="mf">1.000</span> <span class="o">|</span>           <span class="mf">1.000</span> <span class="o">|</span>      <span class="mf">0.100</span> <span class="o">|</span>           <span class="mf">0.100</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">19.9</span> <span class="o">|</span>      <span class="mf">1.000</span> <span class="o">|</span>           <span class="mf">1.000</span> <span class="o">|</span>      <span class="mf">0.100</span> <span class="o">|</span>           <span class="mf">0.100</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;da7b2dcd&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;c282db3a&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -284,9 +334,9 @@ is <code class="docutils literal notranslate"><span class="pre">{&quot;task&quot
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mf">36.2</span> <span class="o">|</span>      <span class="mf">2.000</span> <span class="o">|</span>           <span class="mf">2.000</span> <span class="o">|</span>      <span class="mf">0.200</span> <span class="o">|</span>           <span class="mf">0.200</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">23.2</span> <span class="o">|</span>      <span class="mf">2.000</span> <span class="o">|</span>           <span class="mf">2.000</span> <span class="o">|</span>      <span class="mf">0.200</span> <span class="o">|</span>           <span class="mf">0.200</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;5e4ac917&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;57150d0a&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -301,9 +351,9 @@ is <code class="docutils literal notranslate"><span class="pre">{&quot;task&quot
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mf">36.9</span> <span class="o">|</span>      <span class="mf">3.000</span> <span class="o">|</span>           <span class="mf">3.000</span> <span class="o">|</span>      <span class="mf">0.300</span> <span class="o">|</span>           <span class="mf">0.300</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">26.4</span> <span class="o">|</span>      <span class="mf">3.000</span> <span class="o">|</span>           <span class="mf">3.000</span> <span class="o">|</span>      <span class="mf">0.300</span> <span class="o">|</span>           <span class="mf">0.300</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;14fb7c85&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;f818a935&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -318,9 +368,9 @@ is <code class="docutils literal notranslate"><span class="pre">{&quot;task&quot
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mf">37.6</span> <span class="o">|</span>      <span class="mf">4.000</span> <span class="o">|</span>           <span class="mf">4.000</span> <span class="o">|</span>      <span class="mf">0.400</span> <span class="o">|</span>           <span class="mf">0.400</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">29.5</span> <span class="o">|</span>      <span class="mf">4.000</span> <span class="o">|</span>           <span class="mf">4.000</span> <span class="o">|</span>      <span class="mf">0.400</span> <span class="o">|</span>           <span class="mf">0.400</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;fda5f4d8&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;12564b24&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">6</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -335,18 +385,18 @@ is <code class="docutils literal notranslate"><span class="pre">{&quot;task&quot
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mf">38.4</span> <span class="o">|</span>      <span class="mf">5.000</span> <span class="o">|</span>           <span class="mf">5.000</span> <span class="o">|</span>      <span class="mf">0.500</span> <span class="o">|</span>           <span class="mf">0.500</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">32.7</span> <span class="o">|</span>      <span class="mf">5.000</span> <span class="o">|</span>           <span class="mf">5.000</span> <span class="o">|</span>      <span class="mf">0.500</span> <span class="o">|</span>           <span class="mf">0.500</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;b215aed6&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;efa6cd06&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;76be1c55-5747-4937-8787-4389ec1458a8&#39;</span><span class="p">,</span>
- <span class="s1">&#39;aac0a589-6bc4-48db-a5c2-1c89f509a5bb&#39;</span><span class="p">,</span>
- <span class="s1">&#39;da7b2dcd-bb00-4936-8c80-3496587483e6&#39;</span><span class="p">,</span>
- <span class="s1">&#39;5e4ac917-8e74-4c7f-b515-752a6cb66d70&#39;</span><span class="p">,</span>
- <span class="s1">&#39;14fb7c85-310c-4e78-9ec2-517a9f2ed06a&#39;</span><span class="p">,</span>
- <span class="s1">&#39;fda5f4d8-38b8-41e5-943a-dafeaf920090&#39;</span><span class="p">,</span>
- <span class="s1">&#39;b215aed6-3aed-49d8-9bd0-40143bd3a9ac&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;45fb097d-f659-44cf-99da-fa75c498770b&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;983c1be4-2f37-4c65-ad85-58ec8ce66cdf&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;c282db3a-e722-46ca-b942-9ae7c9990017&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;57150d0a-b856-42e9-86ff-07a880f06be5&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;f818a935-3679-4087-a41d-fabf6ee340e4&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;12564b24-b178-49db-a8bf-38d142108c5c&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;efa6cd06-1150-4185-883b-e2179aa845bb&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>After this scan is finished, the dark subtracted images will be saved in
@@ -372,10 +422,9 @@ from the scan.</p>
 ├── calib_2.poni
 ├── calib_3.poni
 ├── calib_4.poni
-├── calib_5.poni
-└── calib_6.poni
+└── calib_5.poni
 
-0 directories, 7 files
+0 directories, 6 files
 </pre></div>
 </div>
 <p>Now, we can load the calibration results from files to the namespace
@@ -400,9 +449,11 @@ we start the measurement plan using <code class="docutils literal notranslate"><
 diffraction image on the detector <code class="docutils literal notranslate"><span class="pre">pe1c</span></code> will be collected in a line.
 The <code class="docutils literal notranslate"><span class="pre">ns.motor1</span></code> will move from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">5</span></code> and the <code class="docutils literal notranslate"><span class="pre">ns.motor2</span></code>
 will move from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">0.5</span></code>. In total, <code class="docutils literal notranslate"><span class="pre">6</span></code> evenly spaced points
-(including the start and the end) will be collected and the exposure
-time at each point is <code class="docutils literal notranslate"><span class="pre">5</span></code> second. The metadata we would like to record
-is <code class="docutils literal notranslate"><span class="pre">{&quot;task&quot;:</span> <span class="pre">&quot;day</span> <span class="pre">time</span> <span class="pre">scan&quot;}</span></code> (optional). At each point <code class="docutils literal notranslate"><span class="pre">i</span></code>, the
+(including the start and the end) will be collected. Before the
+collection, wait for <code class="docutils literal notranslate"><span class="pre">2</span></code> seconds for the detector to “cool” down and
+then open the shutter to collect the image. The exposure time at each
+point is <code class="docutils literal notranslate"><span class="pre">5</span></code> second. The metadata we would like to record is
+<code class="docutils literal notranslate"><span class="pre">{&quot;task&quot;:</span> <span class="pre">&quot;day</span> <span class="pre">time</span> <span class="pre">scan&quot;}</span></code> (optional). At each point <code class="docutils literal notranslate"><span class="pre">i</span></code>, the
 calibration data from <code class="docutils literal notranslate"><span class="pre">calib_map[i]</span></code> will be used for the data
 processing.</p>
 <p>We run the line scan for <code class="docutils literal notranslate"><span class="pre">num_loop=2</span></code> times. Then, we will let the
@@ -426,9 +477,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">24.6</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">44.6</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;d3c31d01&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">27</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;51c1c1bb&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">8</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -443,9 +494,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">25.4</span> <span class="o">|</span>      <span class="mf">1.000</span> <span class="o">|</span>           <span class="mf">1.000</span> <span class="o">|</span>      <span class="mf">0.100</span> <span class="o">|</span>           <span class="mf">0.100</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">45.8</span> <span class="o">|</span>      <span class="mf">1.000</span> <span class="o">|</span>           <span class="mf">1.000</span> <span class="o">|</span>      <span class="mf">0.100</span> <span class="o">|</span>           <span class="mf">0.100</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;fccd113a&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">28</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;aa2a209c&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">9</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -460,9 +511,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">26.1</span> <span class="o">|</span>      <span class="mf">2.000</span> <span class="o">|</span>           <span class="mf">2.000</span> <span class="o">|</span>      <span class="mf">0.200</span> <span class="o">|</span>           <span class="mf">0.200</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">46.9</span> <span class="o">|</span>      <span class="mf">2.000</span> <span class="o">|</span>           <span class="mf">2.000</span> <span class="o">|</span>      <span class="mf">0.200</span> <span class="o">|</span>           <span class="mf">0.200</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;f7ad28cb&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">29</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;b7f64dc5&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -477,9 +528,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">26.9</span> <span class="o">|</span>      <span class="mf">3.000</span> <span class="o">|</span>           <span class="mf">3.000</span> <span class="o">|</span>      <span class="mf">0.300</span> <span class="o">|</span>           <span class="mf">0.300</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">48.1</span> <span class="o">|</span>      <span class="mf">3.000</span> <span class="o">|</span>           <span class="mf">3.000</span> <span class="o">|</span>      <span class="mf">0.300</span> <span class="o">|</span>           <span class="mf">0.300</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;d793caea&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;33f68b9f&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">11</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -494,9 +545,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">27.7</span> <span class="o">|</span>      <span class="mf">4.000</span> <span class="o">|</span>           <span class="mf">4.000</span> <span class="o">|</span>      <span class="mf">0.400</span> <span class="o">|</span>           <span class="mf">0.400</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">49.5</span> <span class="o">|</span>      <span class="mf">4.000</span> <span class="o">|</span>           <span class="mf">4.000</span> <span class="o">|</span>      <span class="mf">0.400</span> <span class="o">|</span>           <span class="mf">0.400</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;5df9fa0f&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;cf90d1ec&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">12</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -511,9 +562,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">28.5</span> <span class="o">|</span>      <span class="mf">5.000</span> <span class="o">|</span>           <span class="mf">5.000</span> <span class="o">|</span>      <span class="mf">0.500</span> <span class="o">|</span>           <span class="mf">0.500</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">50.6</span> <span class="o">|</span>      <span class="mf">5.000</span> <span class="o">|</span>           <span class="mf">5.000</span> <span class="o">|</span>      <span class="mf">0.500</span> <span class="o">|</span>           <span class="mf">0.500</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;e973d11b&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">32</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;d7be71e4&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">13</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -528,9 +579,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">29.2</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">51.7</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;462ff175&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">33</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;f9be9ece&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">14</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -545,9 +596,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">30.0</span> <span class="o">|</span>      <span class="mf">1.000</span> <span class="o">|</span>           <span class="mf">1.000</span> <span class="o">|</span>      <span class="mf">0.100</span> <span class="o">|</span>           <span class="mf">0.100</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">52.7</span> <span class="o">|</span>      <span class="mf">1.000</span> <span class="o">|</span>           <span class="mf">1.000</span> <span class="o">|</span>      <span class="mf">0.100</span> <span class="o">|</span>           <span class="mf">0.100</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;3d117a51&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">34</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;8e291a80&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">15</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -562,9 +613,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">30.8</span> <span class="o">|</span>      <span class="mf">2.000</span> <span class="o">|</span>           <span class="mf">2.000</span> <span class="o">|</span>      <span class="mf">0.200</span> <span class="o">|</span>           <span class="mf">0.200</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">53.9</span> <span class="o">|</span>      <span class="mf">2.000</span> <span class="o">|</span>           <span class="mf">2.000</span> <span class="o">|</span>      <span class="mf">0.200</span> <span class="o">|</span>           <span class="mf">0.200</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;8cfc1bd4&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">35</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;39c42625&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">16</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -579,9 +630,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">31.6</span> <span class="o">|</span>      <span class="mf">3.000</span> <span class="o">|</span>           <span class="mf">3.000</span> <span class="o">|</span>      <span class="mf">0.300</span> <span class="o">|</span>           <span class="mf">0.300</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">55.0</span> <span class="o">|</span>      <span class="mf">3.000</span> <span class="o">|</span>           <span class="mf">3.000</span> <span class="o">|</span>      <span class="mf">0.300</span> <span class="o">|</span>           <span class="mf">0.300</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;3ba5cfe0&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">36</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;52c9537e&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">17</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -596,9 +647,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">32.3</span> <span class="o">|</span>      <span class="mf">4.000</span> <span class="o">|</span>           <span class="mf">4.000</span> <span class="o">|</span>      <span class="mf">0.400</span> <span class="o">|</span>           <span class="mf">0.400</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">56.2</span> <span class="o">|</span>      <span class="mf">4.000</span> <span class="o">|</span>           <span class="mf">4.000</span> <span class="o">|</span>      <span class="mf">0.400</span> <span class="o">|</span>           <span class="mf">0.400</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;9895f1fd&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">37</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;e5da38bb&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">18</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -613,9 +664,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">33.1</span> <span class="o">|</span>      <span class="mf">5.000</span> <span class="o">|</span>           <span class="mf">5.000</span> <span class="o">|</span>      <span class="mf">0.500</span> <span class="o">|</span>           <span class="mf">0.500</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">57.4</span> <span class="o">|</span>      <span class="mf">5.000</span> <span class="o">|</span>           <span class="mf">5.000</span> <span class="o">|</span>      <span class="mf">0.500</span> <span class="o">|</span>           <span class="mf">0.500</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;03eebeea&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">38</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;7d3a6e6a&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">19</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -630,9 +681,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">33.9</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">03.8</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>      <span class="mf">0.000</span> <span class="o">|</span>           <span class="mf">0.000</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;b76a9a95&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">39</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;33e09bf5&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -647,9 +698,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">34.7</span> <span class="o">|</span>      <span class="mf">1.000</span> <span class="o">|</span>           <span class="mf">1.000</span> <span class="o">|</span>      <span class="mf">0.100</span> <span class="o">|</span>           <span class="mf">0.100</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">05.4</span> <span class="o">|</span>      <span class="mf">1.000</span> <span class="o">|</span>           <span class="mf">1.000</span> <span class="o">|</span>      <span class="mf">0.100</span> <span class="o">|</span>           <span class="mf">0.100</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;bf648a83&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;459c4976&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">21</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -664,9 +715,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">35.5</span> <span class="o">|</span>      <span class="mf">2.000</span> <span class="o">|</span>           <span class="mf">2.000</span> <span class="o">|</span>      <span class="mf">0.200</span> <span class="o">|</span>           <span class="mf">0.200</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">07.4</span> <span class="o">|</span>      <span class="mf">2.000</span> <span class="o">|</span>           <span class="mf">2.000</span> <span class="o">|</span>      <span class="mf">0.200</span> <span class="o">|</span>           <span class="mf">0.200</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;992e33a5&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">41</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;a6575ab3&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">22</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -681,9 +732,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">36.3</span> <span class="o">|</span>      <span class="mf">3.000</span> <span class="o">|</span>           <span class="mf">3.000</span> <span class="o">|</span>      <span class="mf">0.300</span> <span class="o">|</span>           <span class="mf">0.300</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">08.8</span> <span class="o">|</span>      <span class="mf">3.000</span> <span class="o">|</span>           <span class="mf">3.000</span> <span class="o">|</span>      <span class="mf">0.300</span> <span class="o">|</span>           <span class="mf">0.300</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;98fdc7d1&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">42</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;da1207ff&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">23</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -698,9 +749,9 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">37.0</span> <span class="o">|</span>      <span class="mf">4.000</span> <span class="o">|</span>           <span class="mf">4.000</span> <span class="o">|</span>      <span class="mf">0.400</span> <span class="o">|</span>           <span class="mf">0.400</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">10.0</span> <span class="o">|</span>      <span class="mf">4.000</span> <span class="o">|</span>           <span class="mf">4.000</span> <span class="o">|</span>      <span class="mf">0.400</span> <span class="o">|</span>           <span class="mf">0.400</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;4f066e6d&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">43</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;8ecefcd3&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">24</span><span class="p">)</span>
 
 
 <span class="n">INFO</span><span class="p">:</span> <span class="n">No</span> <span class="n">calibration</span> <span class="n">file</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">config_base</span><span class="o">.</span>
@@ -715,29 +766,29 @@ line scan just like that in the beginning.</p>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
 <span class="o">|</span>   <span class="n">seq_num</span> <span class="o">|</span>       <span class="n">time</span> <span class="o">|</span>     <span class="n">motor1</span> <span class="o">|</span> <span class="n">motor1_setpoint</span> <span class="o">|</span>     <span class="n">motor2</span> <span class="o">|</span> <span class="n">motor2_setpoint</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">16</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">37.8</span> <span class="o">|</span>      <span class="mf">5.000</span> <span class="o">|</span>           <span class="mf">5.000</span> <span class="o">|</span>      <span class="mf">0.500</span> <span class="o">|</span>           <span class="mf">0.500</span> <span class="o">|</span>
+<span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">13</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">11.1</span> <span class="o">|</span>      <span class="mf">5.000</span> <span class="o">|</span>           <span class="mf">5.000</span> <span class="o">|</span>      <span class="mf">0.500</span> <span class="o">|</span>           <span class="mf">0.500</span> <span class="o">|</span>
 <span class="o">+-----------+------------+------------+-----------------+------------+-----------------+</span>
-<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;3df41ca3&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">44</span><span class="p">)</span>
+<span class="n">generator</span> <span class="n">count</span> <span class="p">[</span><span class="s1">&#39;0b7ef4f3&#39;</span><span class="p">]</span> <span class="p">(</span><span class="n">scan</span> <span class="n">num</span><span class="p">:</span> <span class="mi">25</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;d3c31d01-d844-4b38-b28d-37873770f924&#39;</span><span class="p">,</span>
- <span class="s1">&#39;fccd113a-0500-42ca-82c6-67d355d763e4&#39;</span><span class="p">,</span>
- <span class="s1">&#39;f7ad28cb-0384-4924-be6c-779974fbb54b&#39;</span><span class="p">,</span>
- <span class="s1">&#39;d793caea-efdd-45c1-a9af-f42b663cb936&#39;</span><span class="p">,</span>
- <span class="s1">&#39;5df9fa0f-a466-4846-982a-f6c6d3d7a127&#39;</span><span class="p">,</span>
- <span class="s1">&#39;e973d11b-1951-4f1e-9e4d-a17b9d67ca1d&#39;</span><span class="p">,</span>
- <span class="s1">&#39;462ff175-884d-43b4-82be-b7159e976636&#39;</span><span class="p">,</span>
- <span class="s1">&#39;3d117a51-9b9b-46c8-9efb-38b833c378ac&#39;</span><span class="p">,</span>
- <span class="s1">&#39;8cfc1bd4-f98b-45d3-af0d-755900c3bbe1&#39;</span><span class="p">,</span>
- <span class="s1">&#39;3ba5cfe0-0388-4d55-a242-3d9c1f0e017f&#39;</span><span class="p">,</span>
- <span class="s1">&#39;9895f1fd-7560-479f-b9c9-ef0e38fcc8ad&#39;</span><span class="p">,</span>
- <span class="s1">&#39;03eebeea-e84a-48a8-8baa-1e59f6b865d5&#39;</span><span class="p">,</span>
- <span class="s1">&#39;b76a9a95-e36b-4067-b1aa-120f1b364c04&#39;</span><span class="p">,</span>
- <span class="s1">&#39;bf648a83-b636-4df9-a3c3-68145cb8de2b&#39;</span><span class="p">,</span>
- <span class="s1">&#39;992e33a5-27ae-4ed1-bff1-a53c7345403b&#39;</span><span class="p">,</span>
- <span class="s1">&#39;98fdc7d1-610a-47d6-9866-ef5c30a52c1c&#39;</span><span class="p">,</span>
- <span class="s1">&#39;4f066e6d-8bef-436a-a49d-11d026dfd662&#39;</span><span class="p">,</span>
- <span class="s1">&#39;3df41ca3-3ad0-4067-bf2e-530da87bf530&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;51c1c1bb-7207-4b60-96a5-0112c1a39757&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;aa2a209c-e459-4b44-b6e1-1472c83419eb&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;b7f64dc5-1bd1-4e5c-a5cd-661ae3009bc2&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;33f68b9f-09f3-4b80-a7bb-2cf08198eb95&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;cf90d1ec-4c23-4f22-b6e9-019cb3c0de15&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;d7be71e4-f954-472e-ad53-104dc34d3e5c&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;f9be9ece-85a7-48c1-a1e8-4275c1bc46aa&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;8e291a80-f987-44d5-9ffd-4c694daa37ea&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;39c42625-e7bb-4e86-865e-2f1165705ef1&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;52c9537e-ed8d-445a-bf97-237209f77885&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;e5da38bb-190a-4ab5-8804-ebc0e5bbd50e&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;7d3a6e6a-20f2-4bd5-9fc1-0f869253d054&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;33e09bf5-fde9-4191-a6b9-dc4ea5344495&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;459c4976-b5f6-48ce-b2a1-c0d4d2802d78&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;a6575ab3-43f0-4773-9896-bbde2caed104&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;da1207ff-174c-49d2-a116-ca8af75728dd&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;8ecefcd3-4004-4543-9381-572dd3d4ad26&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;0b7ef4f3-ee74-499d-a557-0a2a6af9d542&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
